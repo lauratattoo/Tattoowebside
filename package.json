@@ -1,0 +1,12 @@
+{
+  "name": "salon-tattoo-laura",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Salon tattoo Laura – web, galerie, rezervační kalendář a administrace (demo bez databáze)",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,44 @@
+SALON TATTOO LAURA – SPUŠTĚNÍ NA GITHUB + RENDER
+=================================================
+
+1. Rozbal ZIP. Obsah složky tattoo-salon-demo nahraj do kořene NOVÉHO GitHub repozitáře.
+   V kořeni musí být přímo: server.mjs, package.json, render.yaml a složka public.
+
+2. Render → New → Web Service (NIKOLIV Static Site).
+   Propoj GitHub a vyber repozitář.
+   Runtime: Node
+   Build Command: npm install
+   Start Command: npm start
+   Instance Type: Free (pokud je dostupné)
+
+3. Render → Environment:
+   ADMIN_PASSWORD = vlastní dlouhé a bezpečné heslo (NIKDY nedávat do GitHubu)
+   SESSION_SECRET = dlouhý náhodný řetězec (např. 64 náhodných znaků)
+   NODE_ENV = production
+
+4. Deploy Web Service. Po nasazení otevři https://TVUJ-RENDER-ODKAZ.onrender.com
+   Administrace: https://TVUJ-RENDER-ODKAZ.onrender.com/admin.html
+
+5. V administraci nastav telefon, e-mail, Facebook, WhatsApp, Instagram,
+   provozní dobu, galerii a vlastní obsazené termíny.
+
+6. Kontrola provozu: https://TVUJ-RENDER-ODKAZ.onrender.com/health
+   UptimeRobot → HTTP(s) monitor → vlož adresu /health → interval 5 min,
+   pokud to zvolený tarif UptimeRobot dovoluje. NENÍ záruka nepřetržitého běhu.
+
+DŮLEŽITÉ – DEMO BEZ EXTERNÍ DATABÁZE
+  Rezervace, změny webu a nově přidané obrázky se ukládají jen do místních
+  souborů Renderu. U bezplatné služby se mohou při restartu, nové verzi nebo
+  uspání ztratit. Nejde o bezpečné trvalé řešení pro reálné zákazníky.
+  Trvalé řešení: později MongoDB Atlas (rezervace a nastavení),
+  Cloudinary / jiné privátní úložiště (fotografie a neveřejné přílohy).
+
+EMAILY
+  E-mailové notifikace jsou připravené přes Resend API, ale bez nastavení
+  RESEND_API_KEY a EMAIL_FROM se NEODESÍLAJÍ.
+  Rezervace stále fungují uvnitř administrace a stav je uložen.
+  EMAIL_FROM musí být ověřená adresa/doména podle pravidel e-mailové služby.
+
+  Při ostrém spuštění doplň právní/GDPR informace salonu a bezpečné ukládání.
+
+DALŠÍ PODROBNOSTI: README.md
